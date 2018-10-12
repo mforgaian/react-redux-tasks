@@ -7,7 +7,22 @@ import reducer from './reducer'
 import './index.css';
 import App from './App';
 
-const store = createStore(reducer);
+const initialState = {
+    task2:{
+        loanAmount:'9'
+    },
+    task1:{
+        address:'',
+        name:'',
+        email:'',
+        gender:'',
+        phone:'',
+        country:''
+    },
+    say:''
+}
+
+const store = createStore(reducer, initialState);
 
 render(
     <Provider store={store}>

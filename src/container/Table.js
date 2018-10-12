@@ -42,7 +42,7 @@ let Table = ({items}) => (
 )
 
 const mapStateToProps = (state) => ({
-    items: state.items
+    items: state.task1
 })
 
 export default Table = connect(

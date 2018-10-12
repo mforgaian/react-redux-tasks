@@ -5,7 +5,7 @@ import Form from './Form';
 import {connect } from 'react-redux'
 import {addFormData} from '../actions'
 
-let FormTask = ({stateObject, handleSubmit}) => (
+let FormTask = ({handleSubmit}) => (
     <div className="container">
         <Form handleSubmit={handleSubmit} />
         <hr/>
@@ -13,10 +13,6 @@ let FormTask = ({stateObject, handleSubmit}) => (
     </div>
 )
 
-const mapStateToProps = (state) => ({
-    stateObject: state
-})
-  
 const mapDispatchToProps = (dispatch) => ({
     handleSubmit: (statedata) => { 
         dispatch(addFormData(statedata))
@@ -24,6 +20,6 @@ const mapDispatchToProps = (dispatch) => ({
 })
   
 export default FormTask = connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
   )(FormTask)
