@@ -28,24 +28,24 @@ export default class Form extends Component{
     }
 
     render(){
-        const {name, email, phone,gender ,country, address} = this.state;
+        const {name, email, phone, country, address} = this.state;
         return(
-            <form>
-                <label>Name</label>
+            <form onSubmit={this.submitForm}>
+                <label>Name: &nbsp;</label>
                 <input 
                     type="text" 
                     name="name" 
                     value={name} 
                     onChange={this.handleChange} />
                 <br/>
-                <label>Email</label>
+                <label>Email: &nbsp;</label>
                 <input 
                     type="email" 
                     name="email" 
                     value={email}
                     onChange={this.handleChange}/>
                 <br/>
-                <label>Phone</label>
+                <label>Phone: &nbsp;</label>
                 <input 
                     type="number" 
                     name="phone" 
@@ -68,10 +68,8 @@ export default class Form extends Component{
                 <label htmlFor=""><input value="female" onChange={this.handleChange} type="radio" name="gender" id=""/> Female</label>
                 <br/>
                 <input 
-                    type="button" 
-                    value="Submit" 
-                    onClick={this.submitForm} />
-
+                    type="submit" 
+                    value="Submit"/>
             </form>
         );
     }
