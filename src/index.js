@@ -9,7 +9,9 @@ import App from './App';
 
 const initialState = {
     task2:{
-        loanAmount:'9'
+        loanAmount:'999999',
+        loanTerm:'10',
+        interestRate:'8'
     },
     task1:{
         address:'',

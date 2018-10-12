@@ -9,10 +9,10 @@ export const addFormData = data => {
     }
 }
 
-export const addD3FormData = loanAmount => {
+export const addD3FormData = t2data => {
     return {    
         type: "T2_LOAN_AMOUNT",
-        loanAmount
+        t2data
     }
 }
 
