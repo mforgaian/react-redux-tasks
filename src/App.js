@@ -1,13 +1,13 @@
 import React from 'react'
-import Button from './container/sayHello'
+import ConsoleCurrentState from './container/consoleCurrentState'
 import FormTask from './container/FormTask';
 
 let App = () => (
   <div >
-    <Button />
+    <ConsoleCurrentState />
+    <hr/>
     <FormTask />
   </div>
-
 )
 
 export default App;

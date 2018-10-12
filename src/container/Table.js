@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import {connect } from 'react-redux'
+
 import './Table.css';
 
 const TableHeader = () => {
@@ -17,29 +19,33 @@ const TableHeader = () => {
 }
 
 const TableBody = (props) => {
-    const rows = props.items.map((row, index)=>{
-        return(
-            <tr key={index}>
-                <td>{row.name}</td>
-                <td>{row.email}</td>
-                <td>{row.phone}</td>
-                <td>{row.gender}</td>
-                <td>{row.country}</td>
-                <td>{row.address}</td>
+    if(props.items){
+        return (<tbody>
+            <tr>
+                <td>{props.items.name}</td>
+                <td>{props.items.email}</td>
+                <td>{props.items.phone}</td>
+                <td>{props.items.gender}</td>
+                <td>{props.items.country}</td>
+                <td>{props.items.address}</td>
             </tr>
-        );
-    });
-    return <tbody>{rows}</tbody>
+        </tbody>)
+    }
+    return <tbody></tbody>
 }
 
-export default class Table extends Component{
-    render(){
-        const {items} = this.props;
-        return(
-            <table>
-                <TableHeader />
-                <TableBody items={items} />
-            </table>
-        );
-    }
-}
+let Table = ({items}) => (
+    <table>
+        <TableHeader />
+        <TableBody items={items} />
+    </table>
+)
+
+const mapStateToProps = (state) => ({
+    items: state.items
+})
+
+export default Table = connect(
+    mapStateToProps,
+    null
+  )(Table)

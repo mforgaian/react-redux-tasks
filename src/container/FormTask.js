@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import Table from './Table';
 import Form from './Form';
 
@@ -9,15 +9,15 @@ let FormTask = ({stateObject, handleSubmit}) => (
     <div className="container">
         <Form handleSubmit={handleSubmit} />
         <hr/>
-        {/* <Table /> */}
+        <Table />
     </div>
 )
 
 const mapStateToProps = (state) => ({
     stateObject: state
-  })
+})
   
-  const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
     handleSubmit: (statedata) => { 
         dispatch(addFormData(statedata))
     }
